@@ -1,0 +1,56 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+}
+svg
+{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	fill: none;
+}
+svg:nth-child(2)
+{
+	filter: blur(40px);
+}
+svg path
+{
+	d: path("M0,-50 C75,200 75,-200 150,0 C225,200 225,-200 300,50");
+	stroke: #ff0000;
+	stroke-width: 25;
+	stroke-linecap: round;
+	transform: translate(50px,50%);
+	animation: animate 2s ease-in-out infinite;
+}
+@keyframes animate
+{
+	0%
+	{
+		stroke: #ff0000;
+		d: path("M0,-50 C75,200 75,-200 150,0 C225,200 225,-200 300,50");
+	}
+	25%
+	{
+		stroke: #0000ff;
+		d: path("M0,50 C75,-200 75,200 150,0 C225,-200 225,200 300,-50");
+	}
+	50%
+	{
+		stroke: #00ff00;
+		d: path("M0,-50 C75,200 75,-200 150,0 C225,200 225,-200 300,50");
+	}
+	75%
+	{
+		stroke: #ffff00;
+		d: path("M0,50 C75,-200 75,200 150,0 C225,-200 225,200 300,-50");
+	}
+}
